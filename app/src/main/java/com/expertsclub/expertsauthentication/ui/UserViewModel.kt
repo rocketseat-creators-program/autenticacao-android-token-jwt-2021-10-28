@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.*
 import com.expertsclub.expertsauthentication.ExpertsApp
 import com.expertsclub.expertsauthentication.base.AppCoroutinesDispatchers
-import com.expertsclub.expertsauthentication.data.ResultStatus
+import com.expertsclub.expertsauthentication.base.ResultStatus
 import com.expertsclub.expertsauthentication.data.manager.LocalPersistenceManagerImpl
 import com.expertsclub.expertsauthentication.data.manager.TokenManagerImpl
 import com.expertsclub.expertsauthentication.data.repository.AuthRepository

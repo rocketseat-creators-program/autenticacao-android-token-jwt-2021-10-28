@@ -1,6 +1,6 @@
 package com.expertsclub.expertsauthentication.domain
 
-import com.expertsclub.expertsauthentication.data.ResultStatus
+import com.expertsclub.expertsauthentication.base.ResultStatus
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow

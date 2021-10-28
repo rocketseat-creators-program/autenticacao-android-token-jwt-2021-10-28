@@ -1,4 +1,4 @@
-package com.expertsclub.expertsauthentication.data
+package com.expertsclub.expertsauthentication.base
 
 sealed class ResultStatus<out T> {
 
