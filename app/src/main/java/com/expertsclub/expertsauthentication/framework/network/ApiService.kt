@@ -4,7 +4,6 @@ import com.expertsclub.expertsauthentication.data.manager.TokenManager
 import com.expertsclub.expertsauthentication.framework.BASE_URL
 import com.expertsclub.expertsauthentication.framework.PATH_AUTH
 import com.expertsclub.expertsauthentication.framework.PATH_USERS
-import com.expertsclub.expertsauthentication.framework.network.interceptor.AuthInterceptor
 import com.expertsclub.expertsauthentication.framework.network.response.AuthResponse
 import com.expertsclub.expertsauthentication.framework.network.response.UserResponse
 import okhttp3.OkHttpClient
@@ -40,7 +39,6 @@ interface ApiService {
 
         private fun getOkHttpClient(tokenManager: TokenManager): OkHttpClient {
             return OkHttpClient.Builder()
-                .addInterceptor(AuthInterceptor(tokenManager))
                 .addInterceptor(
                     HttpLoggingInterceptor().apply {
                         setLevel(HttpLoggingInterceptor.Level.BODY)

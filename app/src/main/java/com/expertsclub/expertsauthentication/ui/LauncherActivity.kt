@@ -23,7 +23,7 @@ class LauncherActivity : AppCompatActivity() {
         content.viewTreeObserver.addOnPreDrawListener(
             object : OnPreDrawListener {
                 override fun onPreDraw(): Boolean {
-                    return if (viewModel.isUserLoggedIn != null) {
+                    return if (true) {
                         content.viewTreeObserver.removeOnPreDrawListener(this)
                         startActivity(
                             Intent(

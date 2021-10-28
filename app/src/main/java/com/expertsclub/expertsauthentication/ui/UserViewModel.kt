@@ -3,33 +3,21 @@ package com.expertsclub.expertsauthentication.ui
 import android.content.Context
 import androidx.lifecycle.*
 import com.expertsclub.expertsauthentication.ExpertsApp
-import com.expertsclub.expertsauthentication.base.AppCoroutinesDispatchers
 import com.expertsclub.expertsauthentication.base.ResultStatus
-import com.expertsclub.expertsauthentication.framework.preferences.manager.LocalPersistenceManagerImpl
-import com.expertsclub.expertsauthentication.framework.network.manager.TokenManagerImpl
-import com.expertsclub.expertsauthentication.data.repository.AuthRepository
-import com.expertsclub.expertsauthentication.framework.preferences.datasource.PreferencesDataSourceImpl
-import com.expertsclub.expertsauthentication.framework.network.datasource.RetrofitDataSourceImpl
-import com.expertsclub.expertsauthentication.data.repository.UserRepository
 import com.expertsclub.expertsauthentication.domain.model.User
-import com.expertsclub.expertsauthentication.domain.usecase.GetUserUseCase
-import com.expertsclub.expertsauthentication.domain.usecase.LogoutUseCase
-import com.expertsclub.expertsauthentication.framework.network.ApiService
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
-class UserViewModel(
-    private val getUserUseCase: GetUserUseCase,
-    private val logoutUserCase: LogoutUseCase
-) : ViewModel() {
+class UserViewModel : ViewModel() {
 
     private val _authenticationState = MutableLiveData<AuthenticationState>()
     val authenticationState: LiveData<AuthenticationState> = _authenticationState
 
-    fun getUser() = getUserUseCase.invoke(Unit).watchGetUserStatus()
+    fun getUser() {
+        // TODO: Implementar
+    }
 
     private fun Flow<ResultStatus<User>>.watchGetUserStatus() = viewModelScope.launch {
         collect { status ->
@@ -50,7 +38,9 @@ class UserViewModel(
         }
     }
 
-    fun logout() = logoutUserCase.invoke(Unit).watchLogoutStatus()
+    fun logout() {
+        // TODO: Implementar
+    }
 
     private fun Flow<ResultStatus<Unit>>.watchLogoutStatus() = viewModelScope.launch {
         collect { status ->
@@ -78,24 +68,8 @@ class UserViewModel(
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(UserViewModel::class.java)) {
-                val authDataSource = PreferencesDataSourceImpl(expertsApp.authDataStore)
-                val localDataSource = PreferencesDataSourceImpl(expertsApp.localDataStore)
-                val tokenManager = TokenManagerImpl(authDataSource)
-                val localPersistenceManager = LocalPersistenceManagerImpl(localDataSource)
-                val remoteDataSource =
-                    RetrofitDataSourceImpl(ApiService.getService(tokenManager))
-                val dispatchers = AppCoroutinesDispatchers(
-                    io = Dispatchers.IO,
-                    computation = Dispatchers.Default,
-                    main = Dispatchers.Main
-                )
-                val authRepository = AuthRepository(remoteDataSource, tokenManager)
-                val userRepository = UserRepository(remoteDataSource, localPersistenceManager)
-
-                val getUserUserCase = GetUserUseCase(userRepository, dispatchers)
-                val logoutUseCase = LogoutUseCase(authRepository, userRepository, dispatchers)
-
-                return UserViewModel(getUserUserCase, logoutUseCase) as T
+                // TODO: Instanciar as dependências
+                return UserViewModel() as T
             }
             throw IllegalArgumentException("Unknown ViewModel class")
         }
