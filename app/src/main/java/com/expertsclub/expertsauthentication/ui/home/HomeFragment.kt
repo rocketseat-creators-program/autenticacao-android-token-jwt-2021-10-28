@@ -52,8 +52,12 @@ class HomeFragment : Fragment() {
                         flipperHome.displayedChild = FLIPPER_SHOW_CONTENT
                     }
                 }
-                UserViewModel.AuthenticationState.Unauthenticated ->
-                    findNavController().navigate(R.id.loginFragment)
+                UserViewModel.AuthenticationState.Unauthenticated -> {
+                    val navOptions = NavOptions.Builder()
+                        .setPopUpTo(R.id.loginFragment, true)
+                        .build()
+                    findNavController().navigate(R.id.loginFragment, null, navOptions)
+                }
                 else -> binding.flipperHome.displayedChild = FLIPPER_SHOW_LOADING
             }
         }
