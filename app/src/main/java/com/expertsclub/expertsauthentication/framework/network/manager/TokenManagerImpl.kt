@@ -1,6 +1,8 @@
-package com.expertsclub.expertsauthentication.data.manager
+package com.expertsclub.expertsauthentication.framework.network.manager
 
+import com.expertsclub.expertsauthentication.data.manager.TokenManager
 import com.expertsclub.expertsauthentication.data.repository.PreferencesDataSource
+import com.expertsclub.expertsauthentication.framework.PREF_KEY_ACCESS_TOKEN
 import kotlinx.coroutines.flow.Flow
 
 class TokenManagerImpl(private val preferencesDataSource: PreferencesDataSource) : TokenManager {
@@ -15,9 +17,5 @@ class TokenManagerImpl(private val preferencesDataSource: PreferencesDataSource)
 
     override suspend fun clearAccessToken() {
         preferencesDataSource.clearAll()
-    }
-
-    companion object {
-        private const val PREF_KEY_ACCESS_TOKEN = "prefKeyAccessToken"
     }
 }

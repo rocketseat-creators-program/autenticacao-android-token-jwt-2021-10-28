@@ -1,6 +1,8 @@
-package com.expertsclub.expertsauthentication.data.manager
+package com.expertsclub.expertsauthentication.framework.preferences.manager
 
+import com.expertsclub.expertsauthentication.data.manager.LocalPersistenceManager
 import com.expertsclub.expertsauthentication.data.repository.PreferencesDataSource
+import com.expertsclub.expertsauthentication.framework.PREF_KEY_USER_ID
 import kotlinx.coroutines.flow.Flow
 
 class LocalPersistenceManagerImpl(
@@ -17,9 +19,5 @@ class LocalPersistenceManagerImpl(
 
     override suspend fun clearUser() {
         preferencesDataSource.clearAll()
-    }
-
-    companion object {
-        private const val PREF_KEY_USER_ID = "prefKeyUserId"
     }
 }

@@ -55,6 +55,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isUserLoggedIn(): Boolean {
-        return intent.getBooleanExtra("USER_LOGGED_IN", false)
+        return intent.getBooleanExtra(EXTRA_USER_LOGGED_IN, false)
+    }
+
+    companion object {
+        const val EXTRA_USER_LOGGED_IN = "USER_LOGGED_IN"
     }
 }

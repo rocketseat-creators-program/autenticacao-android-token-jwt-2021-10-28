@@ -30,7 +30,10 @@ class LauncherActivity : AppCompatActivity() {
                                 this@LauncherActivity,
                                 MainActivity::class.java
                             ).apply {
-                                putExtra("USER_LOGGED_IN", viewModel.isUserLoggedIn!!)
+                                putExtra(
+                                    MainActivity.EXTRA_USER_LOGGED_IN,
+                                    viewModel.isUserLoggedIn
+                                )
                             }
                         )
                         finish()

@@ -7,10 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.expertsclub.expertsauthentication.ExpertsApp
 import com.expertsclub.expertsauthentication.base.AppCoroutinesDispatchers
 import com.expertsclub.expertsauthentication.base.ResultStatus
-import com.expertsclub.expertsauthentication.data.manager.LocalPersistenceManagerImpl
-import com.expertsclub.expertsauthentication.data.manager.TokenManagerImpl
-import com.expertsclub.expertsauthentication.data.repository.PreferencesDataSourceImpl
-import com.expertsclub.expertsauthentication.data.repository.RetrofitDataSourceImpl
+import com.expertsclub.expertsauthentication.framework.preferences.manager.LocalPersistenceManagerImpl
+import com.expertsclub.expertsauthentication.framework.network.manager.TokenManagerImpl
+import com.expertsclub.expertsauthentication.framework.preferences.datasource.PreferencesDataSourceImpl
+import com.expertsclub.expertsauthentication.framework.network.datasource.RetrofitDataSourceImpl
 import com.expertsclub.expertsauthentication.data.repository.UserRepository
 import com.expertsclub.expertsauthentication.domain.usecase.CheckUserLoggedInUseCase
 import com.expertsclub.expertsauthentication.framework.network.ApiService

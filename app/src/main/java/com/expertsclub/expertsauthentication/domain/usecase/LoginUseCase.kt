@@ -4,7 +4,7 @@ import com.expertsclub.expertsauthentication.base.AppCoroutinesDispatchers
 import com.expertsclub.expertsauthentication.base.ResultStatus
 import com.expertsclub.expertsauthentication.data.repository.AuthRepository
 import com.expertsclub.expertsauthentication.data.repository.UserRepository
-import com.expertsclub.expertsauthentication.domain.ResultUseCase
+import com.expertsclub.expertsauthentication.base.ResultUseCase
 import com.expertsclub.expertsauthentication.framework.extension.getUserIdFromAccessToken
 import kotlinx.coroutines.withContext
 
