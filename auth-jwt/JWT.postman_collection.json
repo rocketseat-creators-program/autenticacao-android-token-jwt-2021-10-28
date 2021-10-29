@@ -30,7 +30,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"andre@kanayama.com\",\n    \"password\": \"1234\"\n}",
+					"raw": "{\n    \"email\": \"user1@teste.com\",\n    \"password\": \"1234\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -63,7 +63,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"email\": \"teste@teste.com\",\n    \"password\": \"1234\",\n    \"name\": \"teste name\"\n}",
+					"raw": "{\n    \"email\": \"user1@teste.com\",\n    \"password\": \"1234\",\n    \"name\": \"User 1\",\n   \"role\": \"USER\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
