@@ -1,0 +1,37 @@
+{
+  "name": "eslint-plugin-json",
+  "version": "1.4.0",
+  "description": "Lint JSON files",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "json",
+    "eslint-plugin-json"
+  ],
+  "author": "Azeem Bande-Ali <a.bandeali@gmail.com>",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azeemba/eslint-plugin-json"
+  },
+  "bugs": {
+    "url": "https://github.com/azeemba/eslint-plugin-json/issues"
+  },
+  "dependencies": {
+    "vscode-json-languageservice": "^3.2.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "~5.1.0",
+    "mocha": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "url": "https://github.com/azeemba/eslint-plugin-json",
+  "license": "ISC"
+}
