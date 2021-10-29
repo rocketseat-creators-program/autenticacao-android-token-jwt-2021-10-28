@@ -14,7 +14,7 @@ router.use(error)
 
 router.get('/users/:id', authenticated, users.findOne)
 router.get('/users', authenticated, users.getAllUsers)
-router.post('/users', authenticated, users.createUser)
+router.post('/users', users.createUser)
 
 router.post('/auth', auth.authenticate)
 
