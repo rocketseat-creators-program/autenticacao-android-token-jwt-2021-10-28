@@ -7,7 +7,7 @@
     <string name="action_log_in">Entrar</string>
     <string name="action_log_out">Sair</string>
     <string name="welcome">Olá, %1$s!</string>
-    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="error">Ops… ocorreu um erro!</string>
     <string name="login_failed">"E-mail ou senha inválidos"</string>
 
     <!-- Strings related to home -->
