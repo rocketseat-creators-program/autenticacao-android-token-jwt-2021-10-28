@@ -58,6 +58,8 @@ class HomeFragment : Fragment() {
                         .build()
                     findNavController().navigate(R.id.loginFragment, null, navOptions)
                 }
+                UserViewModel.AuthenticationState.Error ->
+                    binding.flipperHome.displayedChild = FLIPPER_SHOW_ERROR
                 else -> binding.flipperHome.displayedChild = FLIPPER_SHOW_LOADING
             }
         }
@@ -72,5 +74,6 @@ class HomeFragment : Fragment() {
     companion object {
         private const val FLIPPER_SHOW_LOADING = 0
         private const val FLIPPER_SHOW_CONTENT = 1
+        private const val FLIPPER_SHOW_ERROR = 2
     }
 }
